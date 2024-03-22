@@ -12,12 +12,12 @@ class RecordDTO
     public ?string $company;
     public ?string $phone;
     public ?string $email;
-    public ?DateTime $dateOfBirth;
+    public ?string $dateOfBirth;
     public ?UploadedFile $photo;
 
-    public string $photoUrl;
+    public ?string $photoUrl;
 
-    public function __construct(?string $lfm, ?string $company, ?string $phone, ?string $email, ?dateTime $dateOfBirth, ?UploadedFile $photo)
+    public function __construct(?string $lfm, ?string $company, ?string $phone, ?string $email, ?string $dateOfBirth, ?UploadedFile $photo)
     {
 
         $this->lfm = $lfm;

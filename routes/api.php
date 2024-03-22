@@ -18,6 +18,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::group(['prefix' => 'v1/notebook'], function(){
-   Route::get('', [])->name('notebook.index');
+   Route::post('', [\App\Http\Controllers\Record\CreateController::class, 'store'])->name('notebook.store');
 });
-Route::get('download_exel', [\App\Http\Controllers\Record\IndexController::class, 'index']);

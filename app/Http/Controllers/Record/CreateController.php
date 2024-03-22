@@ -6,13 +6,13 @@ use App\Actions\Record\CreateAction;
 use App\DTO\RecordDTO;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Record\StoreRequest;
-use Illuminate\Http\Request;
 
 class CreateController extends Controller
 {
-    public function store(StoreRequest $request, CreateAction $action)
+    public function store(StoreRequest $request, CreateAction $action): \Illuminate\Http\JsonResponse
     {
-        $dto = RecordDTO::formRequest($request);
-        $action->execute($dto);
+        $dto = RecordDTO::formRequest($request); //создаем слойку Dto
+        $record = $action->execute($dto); // бизнес логику выносим в экшены
+        return $this->OkResponse($record, 'record'); // возвращаем отредактированный ответ
     }
 }

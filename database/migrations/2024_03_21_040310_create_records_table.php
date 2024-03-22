@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('company')->comment('название компании');
             $table->string('phone')->comment('номер телефона');
             $table->string('email')->comment('адрес почты');
-            $table->dateTime('date of birth')->comment('дата рождения');
+            $table->string('date of birth')->comment('дата рождения');
             $table->string('photo_url')->comment('путь к фото');
             $table->timestamps();
         });
